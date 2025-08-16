@@ -1,0 +1,208 @@
+/*=============== WATCHES LIST ===============*/
+.watches-list {
+  padding: 6rem 0 4rem;
+  background-color: var(--body-color);
+}
+
+.watches-list__title {
+  color: var(--title-color);
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-bold);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.watches-list__controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  align-items: center;
+}
+
+.watches-list__filters,
+.watches-list__sort {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.watches-list__filters label,
+.watches-list__sort label {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  font-size: var(--small-font-size);
+}
+
+.watches-list__filters select,
+.watches-list__sort select {
+  background-color: transparent;
+  border: 1px solid var(--text-color);
+  color: var(--title-color);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: var(--small-font-size);
+  cursor: pointer;
+  transition: border-color 0.4s;
+}
+
+.watches-list__filters select:focus,
+.watches-list__sort select:focus {
+  outline: none;
+  border-color: var(--title-color);
+}
+
+.watches-list__grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+/* Watch Card Styles */
+.watch-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.4s, box-shadow 0.4s;
+  border: 1px solid transparent;
+}
+
+.watch-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+  border-color: var(--text-color);
+}
+
+.watch-card__image {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.watch-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-radius: 0.5rem;
+}
+
+.watch-card:hover .watch-card__image img {
+  transform: scale(1.05);
+}
+
+.watch-card__out-of-stock {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: rgba(255, 0, 0, 0.8);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+}
+
+.watch-card__content {
+  padding: 1.5rem;
+}
+
+.watch-card__name {
+  color: var(--title-color);
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-bold);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.watch-card__description {
+  color: var(--text-color);
+  font-size: var(--small-font-size);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.watch-card__category {
+  display: inline-block;
+  background-color: var(--text-color);
+  color: var(--body-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+
+.watch-card__price {
+  color: var(--title-color);
+  font-size: 1.5rem;
+  font-weight: var(--font-bold);
+  margin-bottom: 1rem;
+}
+
+.watch-card__button {
+  width: 100%;
+  background-color: var(--title-color);
+  color: var(--body-color);
+  border: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-weight: var(--font-semi-bold);
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+.watch-card__button:hover:not(.disabled) {
+  background-color: var(--text-color);
+}
+
+.watch-card__button.disabled {
+  background-color: var(--text-color);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media screen and (min-width: 576px) {
+  .watches-list__controls {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .watches-list__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .watches-list__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .watches-list__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+  
+  .watch-card__image {
+    height: 300px;
+  }
+  
+  .watch-card__image img {
+    padding: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1152px) {
+  .watches-list__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+}

@@ -1,0 +1,121 @@
+/*=============== FOOTER ===============*/
+.footer {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 4rem 0 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer__content {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.footer__brand h3 {
+  color: var(--title-color);
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-bold);
+  margin-bottom: 1rem;
+}
+
+.footer__description {
+  color: var(--text-color);
+  font-size: var(--small-font-size);
+  line-height: 1.6;
+  max-width: 300px;
+}
+
+.footer__links h4,
+.footer__contact h4,
+.footer__social h4 {
+  color: var(--title-color);
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 1rem;
+}
+
+.footer__links ul {
+  list-style: none;
+}
+
+.footer__links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer__links a {
+  color: var(--text-color);
+  font-size: var(--small-font-size);
+  transition: color 0.4s;
+}
+
+.footer__links a:hover {
+  color: var(--title-color);
+}
+
+.footer__contact p {
+  color: var(--text-color);
+  font-size: var(--small-font-size);
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.footer__social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer__social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--text-color);
+  color: var(--body-color);
+  border-radius: 50%;
+  font-size: 1.25rem;
+  transition: background-color 0.4s;
+}
+
+.footer__social-links a:hover {
+  background-color: var(--title-color);
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+}
+
+.footer__copyright {
+  text-align: center;
+}
+
+.footer__copyright p {
+  color: var(--text-color);
+  font-size: var(--small-font-size);
+  margin-bottom: 0.5rem;
+}
+
+.footer__trademark {
+  color: var(--title-color) !important;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+}
+
+.footer__trademark strong {
+  color: var(--title-color);
+  font-weight: var(--font-bold);
+}
+
+/* Responsive Design */
+@media screen and (min-width: 768px) {
+  .footer__content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .footer__content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

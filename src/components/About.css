@@ -1,0 +1,71 @@
+/*=============== ABOUT ===============*/
+.about {
+  padding: 6rem 0 4rem;
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.about__title {
+  color: var(--title-color);
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-bold);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about__content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about__text p {
+  color: var(--text-color);
+  font-size: var(--normal-font-size);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.about__features {
+  display: grid;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.about__feature {
+  text-align: center;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  transition: transform 0.4s;
+}
+
+.about__feature:hover {
+  transform: translateY(-5px);
+}
+
+.about__feature i {
+  font-size: 2.5rem;
+  color: var(--title-color);
+  margin-bottom: 1rem;
+}
+
+.about__feature h3 {
+  color: var(--title-color);
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 0.5rem;
+}
+
+.about__feature p {
+  color: var(--text-color);
+  font-size: var(--small-font-size);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media screen and (min-width: 768px) {
+  .about__features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
