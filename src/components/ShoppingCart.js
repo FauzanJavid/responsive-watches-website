@@ -7,6 +7,10 @@ const ShoppingCart = ({ cart, removeFromCart, updateQuantity, clearCart }) => {
 
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
   const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+  
+  const formatPrice = (price) => {
+    return price.toLocaleString('en-IN');
+  };
 
   const handleCheckout = () => {
     if (cart.length === 0) return;
@@ -38,7 +42,7 @@ const ShoppingCart = ({ cart, removeFromCart, updateQuantity, clearCart }) => {
             </div>
             <div className="cart-item__details">
               <h4 className="cart-item__name">{item.name}</h4>
-              <p className="cart-item__price">₹{item.price}</p>
+              <p className="cart-item__price">₹{formatPrice(item.price)}</p>
             </div>
             <div className="cart-item__quantity">
               <button
@@ -55,7 +59,7 @@ const ShoppingCart = ({ cart, removeFromCart, updateQuantity, clearCart }) => {
               </button>
             </div>
                          <div className="cart-item__total">
-               ₹{(item.price * item.quantity)}
+               ₹{formatPrice(item.price * item.quantity)}
              </div>
             <button
               className="cart-item__remove"
@@ -167,7 +171,7 @@ const ShoppingCart = ({ cart, removeFromCart, updateQuantity, clearCart }) => {
       <div className="order-summary">
         <h4>Order Summary</h4>
         <p>Total Items: {totalItems}</p>
-                 <p>Total Amount: ₹{totalPrice}</p>
+                 <p>Total Amount: ₹{formatPrice(totalPrice)}</p>
         <p>Order ID: #{Math.random().toString(36).substr(2, 9).toUpperCase()}</p>
       </div>
       <button onClick={() => {
@@ -196,7 +200,7 @@ const ShoppingCart = ({ cart, removeFromCart, updateQuantity, clearCart }) => {
               <div className="cart-summary">
                 <div className="cart-total">
                   <span>Total ({totalItems} items):</span>
-                  <span className="cart-total__price">₹{totalPrice}</span>
+                  <span className="cart-total__price">₹{formatPrice(totalPrice)}</span>
                 </div>
                 <div className="cart-actions">
                   <button onClick={clearCart} className="cart-clear">

@@ -36,20 +36,43 @@
 
 .watches-list__filters select,
 .watches-list__sort select {
-  background-color: transparent;
+  background-color: var(--body-color);
   border: 1px solid var(--text-color);
   color: var(--title-color);
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
+  padding: 0.75rem 1rem;
+  padding-right: 2.5rem;
+  border-radius: 0.5rem;
   font-size: var(--small-font-size);
+  font-family: var(--body-font);
   cursor: pointer;
-  transition: border-color 0.4s;
+  transition: all 0.4s;
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23ffffff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+  min-width: 120px;
 }
 
 .watches-list__filters select:focus,
 .watches-list__sort select:focus {
   outline: none;
   border-color: var(--title-color);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.watches-list__filters select:hover,
+.watches-list__sort select:hover {
+  border-color: var(--title-color);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Style select options */
+.watches-list__filters select option,
+.watches-list__sort select option {
+  background-color: var(--body-color);
+  color: var(--title-color);
+  padding: 0.5rem;
 }
 
 .watches-list__grid {

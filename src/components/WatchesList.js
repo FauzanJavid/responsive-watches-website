@@ -6,7 +6,7 @@ const WatchesList = ({ addToCart }) => {
     {
       id: 1,
       name: "Baume Custom Timepiece",
-      price: 620,
+      price: 51460,
       image: "/assets/img/watches-1.png",
       description: "Swiss-made precision with custom design",
       category: "luxury",
@@ -15,7 +15,7 @@ const WatchesList = ({ addToCart }) => {
     {
       id: 2,
       name: "Classic Chronograph",
-      price: 450,
+      price: 37350,
       image: "/assets/img/watches-2.png",
       description: "Timeless design meets modern technology",
       category: "classic",
@@ -24,7 +24,7 @@ const WatchesList = ({ addToCart }) => {
     {
       id: 3,
       name: "Sport Adventure",
-      price: 380,
+      price: 31540,
       image: "/assets/img/watches-3.png",
       description: "Built for adventure and durability",
       category: "sport",
@@ -33,7 +33,7 @@ const WatchesList = ({ addToCart }) => {
     {
       id: 4,
       name: "Minimalist Elegance",
-      price: 520,
+      price: 43160,
       image: "/assets/img/watches-1.png",
       description: "Clean lines and sophisticated style",
       category: "minimalist",
@@ -42,7 +42,7 @@ const WatchesList = ({ addToCart }) => {
     {
       id: 5,
       name: "Heritage Collection",
-      price: 890,
+      price: 73870,
       image: "/assets/img/watches-2.png",
       description: "Limited edition heritage timepiece",
       category: "heritage",
@@ -51,7 +51,7 @@ const WatchesList = ({ addToCart }) => {
     {
       id: 6,
       name: "Modern Automatic",
-      price: 650,
+      price: 53950,
       image: "/assets/img/watches-3.png",
       description: "Self-winding mechanical movement",
       category: "automatic",
@@ -81,6 +81,10 @@ const WatchesList = ({ addToCart }) => {
 
   const handleAddToCart = (watch) => {
     addToCart(watch);
+  };
+
+  const formatPrice = (price) => {
+    return price.toLocaleString('en-IN');
   };
 
   return (
@@ -134,7 +138,7 @@ const WatchesList = ({ addToCart }) => {
                 <h3 className="watch-card__name">{watch.name}</h3>
                 <p className="watch-card__description">{watch.description}</p>
                 <div className="watch-card__category">{watch.category}</div>
-                                 <div className="watch-card__price">₹{watch.price * 83}</div>
+                <div className="watch-card__price">₹{formatPrice(watch.price)}</div>
                 
                 <button
                   className={`watch-card__button ${!watch.inStock ? 'disabled' : ''}`}
